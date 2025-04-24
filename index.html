@@ -12,7 +12,7 @@
 
         body {
             font-family: 'Pacifico', cursive;
-            background: url('user_background.jpg') no-repeat center center fixed; background-size: cover;
+            background: radial-gradient(circle, rgba(255, 238, 248, 0.8), rgba(255, 207, 224, 0.8));
             color: #6a1b9a;
             text-align: center;
             margin: 0;
@@ -25,10 +25,7 @@
 
         .container {
             margin-top: 60px;
-            background: url('user_background.jpg') no-repeat center center fixed; background-size: cover;
             padding: 50px;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
@@ -60,7 +57,7 @@
         }
 
         .play-button {
-            background: url('user_background.jpg') no-repeat center center fixed; background-size: cover;
+            background: linear-gradient(135deg, #ff4081, #f06292);
             color: white;
             font-size: 20px;
             padding: 14px 28px;
@@ -73,7 +70,7 @@
         }
 
         .play-button:hover {
-            background: url('user_background.jpg') no-repeat center center fixed; background-size: cover;
+            background: linear-gradient(135deg, #ec407a, #d81b60);
         }
 
         footer {
@@ -123,44 +120,37 @@
 
     <div class="container">
         <div class="emoji">🎉🎂🎈</div>
-        <h1>С Днём Рождения!</h1>
-        <p>Дорогой(ая) [Имя]!</p>
-        <p>Желаю тебе океан радости, горы счастья и бескрайнее небо вдохновения!<br>
-        Пусть сбудется всё, что задумано, и каждый день будет волшебным! ✨</p>
-        <p>Ты — сияющая звезда, и этот день твой! 🌟</p>
-        <img src="birthday-cake.jpg" alt="Торт ко дню рождения">
+        <h1>С Днём Рождения, Принцесса!</h1>
+        <p>Дорогая Алина!</p>
+        <p>Желаю тебе море счастья, оставайся такой какая ты есть!<br>
+        ТЫ одна такая на этот мир, сияй  ✨</p>
+        <p> ТЫ самая-самая во всех смыслах 🌟</p>
+        
+        <!-- Ваше фото -->
+        <img src="foto.jpg" alt="Твоё фото">
+        
         <br>
         
-<div style="margin-top: 40px;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/T3FQxH2fz9M"
-        title="YouTube Shorts" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
-</div>
+        <!-- Видео с YouTube -->
+        <div style="margin-top: 40px;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/rnjbemXGNmw?autoplay=1&mute=1"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
 
-
-
-<script>
-function toggleMusic() {
-    const audio = document.getElementById("song");
-    if (audio.paused) {
-        audio.play();
-    } else {
-        audio.pause();
-    }
-}
-</script>
-
-        
+        <!-- Кнопка воспроизведения песни -->
+        <button class="play-button" onclick="toggleSong()">▶ Воспроизвести/Остановить песню</button>
     </div>
 
-    <audio id="song" autoplay>
-        <source src="music.mp3" type="audio/mpeg">
+    <!-- Аудио -->
+    <audio id="song" preload="auto">
+        <source src="song.mp3" type="audio/mpeg">
         Ваш браузер не поддерживает воспроизведение аудио.
     </audio>
 
     <footer>
-        С любовью и теплом — твой персональный праздник! 💖
+        С любовью твое чудовище 💖
     </footer>
 
 <!-- Шарики -->
@@ -208,6 +198,20 @@ function toggleMusic() {
     });
     fireworks.start();
 </script>
-</body>
 
+<script>
+    // Функция для воспроизведения/остановки песни
+    function toggleSong() {
+        var song = document.getElementById('song');
+        if (song.paused) {
+            song.play();
+            document.querySelector('.play-button').innerHTML = "❚❚ Остановить песню";
+        } else {
+            song.pause();
+            document.querySelector('.play-button').innerHTML = "▶ Воспроизвести песню";
+        }
+    }
+</script>
+
+</body>
 </html>
